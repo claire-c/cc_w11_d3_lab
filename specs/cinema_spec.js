@@ -32,9 +32,12 @@ describe('Cinema', function () {
     assert.strictEqual(actual[0].title, "T2 Trainspotting");
   });
 
+  it('should be able to filter films by genre', function () {
+    const actual = cinema.filterFilmsByGenre("drama");
+    assert.strictEqual(actual.length, 2);
+  });
 
 
-  it('should be able to filter films by genre');
   it('should be able to check whether there are some films from a particular year');
   it('should be able to check whether there are no films from a particular year');
   it('should be able to check whether all films are over a particular length');
