@@ -15,21 +15,28 @@ Cinema.prototype.getFilmByTitle = function (filmTitle){
     return film.title === filmTitle
   });
     return correctFilm;
-  }
+}
 
 Cinema.prototype.filterFilmsByGenre = function (genre){
   const films = this.films.filter((film) => {
     return film.genre === genre
   });
     return films;
-  }
+}
 
-  Cinema.prototype.filterFilmsByYear = function (year){
-    const films = this.films.filter((film) => {
-      return film.year === year
-    });
-      return films;
-    }
+Cinema.prototype.filterFilmsByYear = function (year){
+  const films = this.films.filter((film) => {
+    return film.year === year
+  });
+    return films;
+}
+
+Cinema.prototype.filmLength = function (length){
+  const films = this.films.filter((film) => {
+    return film.length >= length
+  });
+  return films;
+}
 
 
 
