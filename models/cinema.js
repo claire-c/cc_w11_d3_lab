@@ -38,6 +38,14 @@ Cinema.prototype.filmLength = function (length){
   return films;
 }
 
+Cinema.prototype.totalFilmLength = function (){
+  const totalLength = this.films.reduce((total, film) => {
+    return total + film.length;
+  }, 0);
+  return totalLength;
+}
+
+
 
 
 module.exports = Cinema;
