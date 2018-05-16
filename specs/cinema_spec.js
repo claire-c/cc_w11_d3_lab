@@ -33,7 +33,7 @@ describe('Cinema', function () {
   });
 
   it('should be able to filter films by genre', function () {
-    const actual = cinema.filterFilmsByGenre("drama");
+    const actual = cinema.filmsByProperty("genre", "drama");
     assert.strictEqual(actual.length, 2);
   });
 
@@ -58,6 +58,21 @@ describe('Cinema', function () {
     assert.strictEqual(actual, 622);
   });
 
+  it("should be able to filter films by year", function () {
+    const actual = cinema.filmsByProperty("year", 2017);
+    assert.strictEqual(actual.length, 3);
+  });
+
 });
+
+
+
+// Add a another test, 'Cinema should be able to filter films by year'.
+//
+// We already have a method that filters films by genre, the functionality of which is very similar. We don't want two separate methods as that wouldn't be DRY. Your task is get the final test to pass by to writing a new method called filmsByProperty, which takes two arguments:
+//
+// the name of the property
+// the value being search for
+// Once the final test is passing, modify the test 'Cinema should be able to filter films by genre' to use the new filmsByProperty method.
 
 module.exports = Cinema;
