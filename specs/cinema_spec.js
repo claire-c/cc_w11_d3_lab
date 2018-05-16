@@ -21,14 +21,19 @@ describe('Cinema', function () {
   });
 
   it('should be able to get a list of film titles', function () {
-    const films = cinema.getFilmTitles(cinema.films);
+    const films = cinema.getFilmTitles();
     const actual = films[0];
-
     assert.strictEqual(actual, "Moonlight");
     assert.strictEqual(films.length, 5);
   });
 
-  it('should be able to find a film by title');
+  it('should be able to find a film by title', function (){
+    const actual = cinema.getFilmByTitle("T2 Trainspotting");
+    assert.strictEqual(actual[0].title, "T2 Trainspotting");
+  });
+
+
+
   it('should be able to filter films by genre');
   it('should be able to check whether there are some films from a particular year');
   it('should be able to check whether there are no films from a particular year');
